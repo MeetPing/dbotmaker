@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DbotMaker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">Discord bot maker</div>
+	<main class="mid-main">
+    Programming language:
+	<select>
+    <option value="Eris">Eris</option>
+	</select>
+  <br>
+  <input type="text" placeholder="Command" id="CMD">
+  <input type="text" placeholder="Reply" id="RE">
+  <button type="button" onclick="MAKE()">MAKE</button>
+  <br>
+  <div id="Code">
+	</main>
+</body>
+<script>
+var Eris_OnMsg = "bot.on('messageCreate', (msg) => {";
+var Eris_ThisCMDstart = "if (msg.content == '";
+var Eris_ThisCMDend = "') {";
+const cmd = document.getElementById("CMD").value;
+const reply = document.getElementById("RE").value;
+var saymessage = "bot.createMessage(msg.channel.id, '";
+var saymessageend = "');"
+function MAKE() {
+  const cmd = document.getElementById("CMD").value;
+  const reply = document.getElementById("RE").value;
+  document.getElementById("Code").innerHTML = Eris_OnMsg+ '<br>' + Eris_ThisCMDstart + cmd + Eris_ThisCMDend + '<br>' + saymessage + reply + saymessageend + '<br>' + '}';
+}
+</script>
+</html>
