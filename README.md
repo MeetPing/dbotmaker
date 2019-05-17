@@ -1,2 +1,0 @@
-# dbotmaker
-Discord bot Maker
